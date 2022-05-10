@@ -9,7 +9,6 @@ import {CoreModule} from "./core/core.module";
 import {StudentModule} from "./student/student/student.module";
 import {FormsModule} from "@angular/forms";
 import { PowerToxPipe } from './power-tox.pipe';
-import { StringReplacePipe } from './string-replace.pipe';
 import { StringFilterPipe } from './string-filter.pipe';
 import { ArraysComponent } from './arrays/arrays.component';
 import {CalendarModule} from 'primeng/calendar';
@@ -23,16 +22,17 @@ import { RatingModule } from "primeng/rating";
     StudentComponent,
     DepartmentComponent,
     PowerToxPipe,
-    StringReplacePipe,
     StringFilterPipe,
     ArraysComponent,
 
 
   ],
   imports: [
-    BrowserModule, CoreModule, StudentModule, FormsModule,CalendarModule,BrowserAnimationsModule,RatingModule, FormsModule
+    BrowserModule, CoreModule, StudentModule, FormsModule, CalendarModule, BrowserAnimationsModule, RatingModule, FormsModule
   ],
   providers: [],
+  exports: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,7 @@
 <div>
-  <p-calendar [(ngModel)]="value" [inline]="true"></p-calendar>
+<!--  <p-calendar [(ngModel)]="value" [inline]="true"></p-calendar>-->
+  <p-calendar [(ngModel)]="dateValue" dateFormat="dd.mm.yy"></p-calendar>
+
   <input type="text" [(ngModel)]="std.id" >
 <input type="text" [(ngModel)]="std.name" >
 <input type="text" [(ngModel)]="std.age" >

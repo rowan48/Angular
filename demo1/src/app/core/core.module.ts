@@ -6,6 +6,9 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { LogoComponent } from './logo/logo.component';
 import {RatingModule} from 'primeng/rating';
 import {FormsModule} from "@angular/forms";
+import { ProductComponent } from './product/product.component';
+import {StringReplacePipe} from "../string-replace.pipe";
+
 
 
 
@@ -15,13 +18,17 @@ import {FormsModule} from "@angular/forms";
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
-    LogoComponent
+    LogoComponent,
+    ProductComponent,
+    StringReplacePipe,
+
   ],
   imports: [
     CommonModule, RatingModule, FormsModule
   ],
   exports:[
-    FooterComponent,LogoComponent,HeaderComponent,SidebarComponent
+    FooterComponent,LogoComponent,HeaderComponent,SidebarComponent,ProductComponent,StringReplacePipe
+
   ]
 })
 export class CoreModule {

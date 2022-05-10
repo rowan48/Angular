@@ -11,7 +11,8 @@ export class StudentComponent implements OnInit {
   }
    ngOnInit(): void {
   }
-  value: Date=new Date();
+  // value: Date=new Date();
+  dateValue:Date=new Date();
   isShown: boolean = false ;
   isEdited: boolean = false ;
   student:Student=new Student(0,"edit",0,0,1,1);

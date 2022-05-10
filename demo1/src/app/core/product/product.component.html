@@ -1,0 +1,35 @@
+<table class="table table-bordered table-hover" >
+  <thead>
+  <tr>
+    <th>
+      <button (click)="disp=!disp" class="btn btn-primary" >Show Image</button>
+    </th>
+    <th>Product</th>
+    <th>Code</th>
+    <th>Available</th>
+    <th>Price</th>
+    <th>5 Star Rating</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of products">
+    <div>
+      <td>
+        <img *ngIf="disp" src="./../../../assets/images/{{item.img}}" alt="{{item.img}}"
+             style="width: 150px;height: 70px;">
+      </td>
+    </div>
+    <ng-template #e1>
+      <td> </td>
+    </ng-template>
+    <td>{{item.name}}</td>
+    {{item.code | stringReplace }}
+    <td>{{item.date |date: 'dd/MM/yyyy' }}</td>
+    <td>{{item.price  }}</td>
+    <td>
+      <p-rating [(ngModel)]="item.rate" [cancel]="false"></p-rating>
+
+    </td>
+  </tr>
+  </tbody>
+</table>
