@@ -25,11 +25,10 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "images"
+              "src/assets/images"
             ],
             "styles": [
-              "src/styles.css",
-              "images/style.css"
+              "src/styles.css"
             ],
             "scripts": []
           },

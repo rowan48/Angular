@@ -1,1 +1,41 @@
-<p>student works!</p>
+<div>
+<input type="text" [(ngModel)]="std.id" >
+<input type="text" [(ngModel)]="std.name" >
+<input type="text" [(ngModel)]="std.age" >
+<input type="text" [(ngModel)]="std.deptNumber" >
+<button (click)="addStudent()" >Add Student</button>
+</div>
+<table class="table table-dark">
+  <thead>
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Name</th>
+    <th scope="col">Age</th>
+    <th scope="col">Department Number</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr  *ngFor="let item of stds ; let i =index">
+    <td #stdid >{{item.id}}</td>
+    <td #stdname>{{item.name}}</td>
+    <td #stdage>{{item.age}}</td>
+    <td #stddeptNumber>{{item.deptNumber}}</td>
+    <td><button (click)="showStudent(stdid.innerHTML,stdname.innerHTML,stdage.innerHTML,stddeptNumber.innerHTML)" class="btn btn-primary">Show</button> <button (click)="editStudent(stdid.innerHTML,stdname.innerHTML,stdage.innerHTML,stddeptNumber.innerHTML)" class=" btn btn-secondary">Edit</button> <button (click)="deleteStudent(stdid.innerHTML,i)"   class="btn btn-danger">Delete</button></td>
+    <td></td>
+  </tr>
+  </tbody>
+</table>
+<div *ngIf="isShown">{{showstudent.id}} : {{showstudent.name}} : {{showstudent.age}} : {{showstudent.deptNumber}}</div>
+<div *ngIf="isEdited">
+<input  type="text" [(ngModel)]="student.id" >
+<input type="text" [(ngModel)]="student.name" >
+<input type="text" [(ngModel)]="student.age" >
+<input type="text" [(ngModel)]="student.deptNumber" >
+<button (click)="updateStudent()" >Update Student</button>
+</div>
+
+<ng-template>
+
+</ng-template>
+

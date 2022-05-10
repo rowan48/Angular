@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Student} from "../Model/student";
 
 @Component({
   selector: 'app-student',
@@ -6,10 +7,66 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./student.component.css']
 })
 export class StudentComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() {
+  }
+   ngOnInit(): void {
+  }
+  isShown: boolean = false ;
+  isEdited: boolean = false ;
+  student:Student=new Student(0,"edit",0,0);
+   stds:Student[]=[
+    new Student(1,"aliaa",23,2),
+    new Student(2,"esraa",23,3),
+    new Student(3,"hadeer",23,4)
+  ];
+   std:Student=new Student(0,"",0,0);
+   showstudent:Student=new Student(0,"rowan",0,0);
+  addStudent(){
+    this.stds.push(new Student(this.std.id,this.std.name,this.std.age,this.std.deptNumber))
+    this.std.id=0;
+    this.std.name="";
+    this.std.age=0;
+    this.std.deptNumber=0;
+  }
+  showStudent(id:string,name:string,age:string,deptno:string){
+    this.isShown = true;
+    this.isEdited=false;
+    this.showstudent.id=Number(id);
+    this.showstudent.name=name;
+    this.showstudent.age=Number(age);
+    this.showstudent.deptNumber=Number(deptno);
+  }
+  deleteStudent(id:string,i:number) {
+    this.isEdited=false;
+    this.isShown = false;
+    let stdid = Number(id);
+    for(let i =0; i<this.stds.length;i++){
+    if(this.stds[i].id===stdid){
+    this.stds.splice(i, 1);
+  }
+  }
   }
 
+  editStudent(id:string,name:string,age:string,deptno:string){
+    this.isEdited=true;
+    this.isShown = false;
+    this.student.id=Number(id);
+    this.student.name=name;
+    this.student.age=Number(age);
+    this.student.deptNumber=Number(deptno);
+  }
+
+updateStudent(){
+  this.isEdited=true;
+  this.isShown = false;
+  for(let i =0; i<this.stds.length;i++){
+    if(this.stds[i].id===this.student.id){
+      this.stds[i].id=this.student.id;
+      this.stds[i].name=this.student.name;
+      this.stds[i].age=this.student.age;
+      this.stds[i].deptNumber=this.student.deptNumber;
+
+    }
+  }
+}
 }
