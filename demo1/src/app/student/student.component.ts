@@ -11,22 +11,25 @@ export class StudentComponent implements OnInit {
   }
    ngOnInit(): void {
   }
+  value: Date=new Date();
   isShown: boolean = false ;
   isEdited: boolean = false ;
-  student:Student=new Student(0,"edit",0,0);
+  student:Student=new Student(0,"edit",0,0,1,1);
    stds:Student[]=[
-    new Student(1,"aliaa",23,2),
-    new Student(2,"esraa",23,3),
-    new Student(3,"hadeer",23,4)
+    new Student(1,"aliaa-mostafa",23,2,1,2),
+    new Student(2,"esraa-nouh",23,3,3,4),
+    new Student(3,"hadeer-hussen",23,4,5,7)
   ];
-   std:Student=new Student(0,"",0,0);
-   showstudent:Student=new Student(0,"rowan",0,0);
+   std:Student=new Student(0,"",0,0,9,10);
+   showstudent:Student=new Student(0,"rowan",0,0,20,30);
   addStudent(){
-    this.stds.push(new Student(this.std.id,this.std.name,this.std.age,this.std.deptNumber))
+    this.stds.push(new Student(this.std.id,this.std.name,this.std.age,this.std.deptNumber,this.std.x,this.std.y))
     this.std.id=0;
     this.std.name="";
     this.std.age=0;
     this.std.deptNumber=0;
+    this.std.x=1;
+    this.std.y=1;
   }
   showStudent(id:string,name:string,age:string,deptno:string){
     this.isShown = true;

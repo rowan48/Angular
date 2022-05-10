@@ -4,6 +4,9 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { LogoComponent } from './logo/logo.component';
+import {RatingModule} from 'primeng/rating';
+import {FormsModule} from "@angular/forms";
+
 
 
 
@@ -15,10 +18,12 @@ import { LogoComponent } from './logo/logo.component';
     LogoComponent
   ],
   imports: [
-    CommonModule
+    CommonModule, RatingModule, FormsModule
   ],
   exports:[
     FooterComponent,LogoComponent,HeaderComponent,SidebarComponent
   ]
 })
-export class CoreModule { }
+export class CoreModule {
+
+}

@@ -1,5 +1,6 @@
 <div>
-<input type="text" [(ngModel)]="std.id" >
+  <p-calendar [(ngModel)]="value" [inline]="true"></p-calendar>
+  <input type="text" [(ngModel)]="std.id" >
 <input type="text" [(ngModel)]="std.name" >
 <input type="text" [(ngModel)]="std.age" >
 <input type="text" [(ngModel)]="std.deptNumber" >
@@ -12,15 +13,17 @@
     <th scope="col">Name</th>
     <th scope="col">Age</th>
     <th scope="col">Department Number</th>
+    <th scope="col">operation</th>
     <th>Actions</th>
   </tr>
   </thead>
   <tbody>
   <tr  *ngFor="let item of stds ; let i =index">
     <td #stdid >{{item.id}}</td>
-    <td #stdname>{{item.name}}</td>
+    <td #stdname>{{item.name|stringReplace}}</td>
     <td #stdage>{{item.age}}</td>
     <td #stddeptNumber>{{item.deptNumber}}</td>
+    <td >{{item.x|powerTox:item.y}}</td>
     <td><button (click)="showStudent(stdid.innerHTML,stdname.innerHTML,stdage.innerHTML,stddeptNumber.innerHTML)" class="btn btn-primary">Show</button> <button (click)="editStudent(stdid.innerHTML,stdname.innerHTML,stdage.innerHTML,stddeptNumber.innerHTML)" class=" btn btn-secondary">Edit</button> <button (click)="deleteStudent(stdid.innerHTML,i)"   class="btn btn-danger">Delete</button></td>
     <td></td>
   </tr>
@@ -34,8 +37,4 @@
 <input type="text" [(ngModel)]="student.deptNumber" >
 <button (click)="updateStudent()" >Update Student</button>
 </div>
-
-<ng-template>
-
-</ng-template>
 

@@ -28,7 +28,11 @@
               "src/assets/images"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/bootstrap/dist/js/bootstrap.js",
+              "./node_modules/font-awesome/css/font-awesome.css"
+
+
             ],
             "scripts": []
           },
