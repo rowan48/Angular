@@ -34,23 +34,10 @@ export class StudentService {
   }
   deleteStudent(id: number){
       this.students.forEach((value,index)=>{
-        if(this.students[index].id === id) this.students.splice(index,1);
+        if(this.students[index].id == id) this.students.splice(index,1);
       });
-    // console.log("deleted");
-    // this.router.navigateByUrl('/list');
-
-
   }
   editStudent(id:number){
-    console.log("reached edit function1")
-
-    /*this.isEdited=true;
- this.isShown = false;
- this.student.id=Number(id);
- this.student.name=name;
- this.student.age=Number(age);
- this.student.deptNumber=Number(deptno);*/
-    //TODO:to be continued
     for (let i = 0; i < this.students.length; i++) {
       if (this.students[i].id == id) {
         return this.students[i];

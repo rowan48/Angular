@@ -17,7 +17,6 @@ const routes:Routes=[
   {path:"edit/:id",component:EditStudentComponent},
   {path:"**",component:NotFoundComponent},
 
-
 ];
 
 @NgModule({
