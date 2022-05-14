@@ -18,7 +18,6 @@ std:Student=new Student(-1,"rowan",23,2);
   constructor(public StudentService:StudentService,public ar:ActivatedRoute) { }
   ngOnInit(): void {
     this.students=this.StudentService.getAllStudents();
-    console.log(this.students);
          this.addStudent();
   }
   deleteStudent(id:number){

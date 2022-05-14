@@ -14,20 +14,19 @@ export class DeleteStudentComponent implements OnInit {
     this.router.navigateByUrl('/list');
   }
   ngOnInit(): void {
-    // prompt("Are u sure")
-    // if(prompt("Are u sure")=='ok'){
-    //   console.log('ol');
-    //   let id =-1;
-    //   this.ar.params.subscribe(
-    //     a=>{
-    //       id=a['id'];
-    //       this.StudentService.deleteStudent(id);
-    //
-    //       this.router.navigateByUrl('/RefreshComponent', { skipLocationChange: true }).then(() => {
-    //         this.router.navigate(['/list']);
-    //       });         }
-    //   )
-    // }
+    if(prompt("Are u sure")=='ok'){
+      console.log('ol');
+      let id =-1;
+      this.ar.params.subscribe(
+        a=>{
+          id=a['id'];
+          this.StudentService.deleteStudent(id);
+
+          this.router.navigateByUrl('/RefreshComponent', { skipLocationChange: true }).then(() => {
+            this.router.navigate(['/list']);
+          });         }
+      )
+    }
 
   }
 }
