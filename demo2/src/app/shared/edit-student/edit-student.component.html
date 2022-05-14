@@ -1,1 +1,7 @@
-<p>edit-student works!</p>
+<div>
+  <input type="text" [(ngModel)]="std.id" >
+  <input type="text" [(ngModel)]="std.name" >
+  <input type="text" [(ngModel)]="std.age" >
+  <input type="text" [(ngModel)]="std.deptNumber" >
+  <a class="btn btn-success" (click)="updateStudent(std)" [routerLink]="['/list']">Update Student</a>
+</div>

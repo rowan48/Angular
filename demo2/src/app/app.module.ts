@@ -7,14 +7,17 @@ import { AddDepartmentComponent } from './add-department/add-department.componen
 import { DeleteDepartmentComponent } from './delete-department/delete-department.component';
 import { EditDepartmentComponent } from './edit-department/edit-department.component';
 import { ListDepartmentsComponent } from './list-departments/list-departments.component';
+import {AppRoutingModule} from "./app-routing/app-routing.module";
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    NotFoundComponent,
 
   ],
   imports: [
-    BrowserModule,SharedModule
+    BrowserModule,SharedModule,AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

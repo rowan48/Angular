@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import {Student} from "./_models/student";
+import {ActivatedRoute, Router} from "@angular/router";
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class StudentService {
 
-  constructor() {
+  constructor(public ar:ActivatedRoute,public router:Router) {
   }
 
   private students: Student[] = [
@@ -34,9 +36,38 @@ export class StudentService {
       this.students.forEach((value,index)=>{
         if(this.students[index].id === id) this.students.splice(index,1);
       });
+    // console.log("deleted");
+    // this.router.navigateByUrl('/list');
+
 
   }
   editStudent(id:number){
+    console.log("reached edit function1")
+
+    /*this.isEdited=true;
+ this.isShown = false;
+ this.student.id=Number(id);
+ this.student.name=name;
+ this.student.age=Number(age);
+ this.student.deptNumber=Number(deptno);*/
     //TODO:to be continued
+    for (let i = 0; i < this.students.length; i++) {
+      if (this.students[i].id == id) {
+        return this.students[i];
+      }
+    }
+    return null;
+  }
+  updateStudent(student:Student){
+    for(let i =0; i<this.students.length;i++){
+      if(this.students[i].id==student.id){
+        this.students[i].id=student.id;
+        this.students[i].name=student.name;
+        this.students[i].age=student.age;
+        this.students[i].deptNumber=student.deptNumber;
+
+      }
+    }
+
   }
 }

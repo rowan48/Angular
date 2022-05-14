@@ -9,6 +9,10 @@ import {ListDepartmentsComponent} from "../list-departments/list-departments.com
 import {AddDepartmentComponent} from "../add-department/add-department.component";
 import {EditDepartmentComponent} from "../edit-department/edit-department.component";
 import {DeleteDepartmentComponent} from "../delete-department/delete-department.component";
+import {RouterModule} from "@angular/router";
+import {AppRoutingModule} from "../app-routing/app-routing.module";
+import { BrowserModule } from '@angular/platform-browser';
+import { CustomFormsModule } from 'ng2-validation'
 
 
 
@@ -24,7 +28,8 @@ import {DeleteDepartmentComponent} from "../delete-department/delete-department.
     DeleteDepartmentComponent,
   ],
   imports: [
-    CommonModule,FormsModule
+    CommonModule,FormsModule,RouterModule,AppRoutingModule,BrowserModule,
+    CustomFormsModule
   ],exports:[
     ListStudentsComponent,AddStudentComponent,EditStudentComponent,DeleteStudentComponent,ListDepartmentsComponent,AddDepartmentComponent,EditDepartmentComponent,
     DeleteDepartmentComponent
