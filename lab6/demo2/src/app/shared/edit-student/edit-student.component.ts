@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {StudentService} from "../../student.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Student} from "../../_models/student";
+import { RouterModule, Routes } from '@angular/router';
 
 @Component({
   selector: 'app-edit-student',
@@ -10,7 +11,9 @@ import {Student} from "../../_models/student";
 })
 export class EditStudentComponent implements OnInit {
 
-  constructor(public StudentService:StudentService,public ar:ActivatedRoute) { }
+  constructor(public StudentService:StudentService,public ar:ActivatedRoute ,private router: Router) {
+
+  }
   std:Student=new Student(0,"",0,0);
   ngOnInit(): void {
     let id =-1;
@@ -24,10 +27,17 @@ export class EditStudentComponent implements OnInit {
     )
   }
   updateStudent(student:Student){
+
+
     this.StudentService.updateStudent(student).subscribe(
-      s=>console.log(s)
+      //s=>console.log(s)
+
+
+    // router.navigate(['/list']);
+        //[routerLink]="['/list']"
 
     )
+    this.router.navigateByUrl('/list');
 
   }
 }
