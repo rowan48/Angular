@@ -1,0 +1,7 @@
+<div>
+  <input type="text" [(ngModel)]="std._id" >
+  <input type="text" [(ngModel)]="std.name" >
+  <input type="text" [(ngModel)]="std.age" >
+  <input type="text" [(ngModel)]="std.depno" >
+  <a class="btn btn-success" (click)="updateStudent(std)" [routerLink]="['/list']">Update Student</a>
+</div>
